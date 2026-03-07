@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Formulaire de Contact</title>
+    <style>
+        /* CSS : Pour rendre le formulaire joli */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Important pour que le padding ne casse pas la largeur */
+        }
+
+        textarea {
+            resize: vertical; /* Permet de redimensionner la hauteur uniquement */
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Contactez-nous</h2>
+        
+        <!-- Début du formulaire -->
+        <form action="/envoyer-donnees" method="POST">
+            
+            <!-- Champ Nom -->
+            <div class="form-group">
+                <label for="nom">Nom complet :</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+
+            <!-- Champ Email -->
+            <div class="form-group">
+                <label for="email">Adresse Email :</label>
+                <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+            </div>
+
+            <!-- Menu Déroulant -->
+            <div class="form-group">
+                <label for="sujet">Sujet :</label>
+                <select id="sujet" name="sujet">
+                    <option value="question">Question générale</option>
+                    <option value="support">Support technique</option>
+                    <option value="partenariat">Partenariat</option>
+                </select>
+            </div>
+
+            <!-- Zone de texte (Message) -->
+            <div class="form-group">
+                <label for="message">Votre message :</label>
+                <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message ici..." required></textarea>
+            </div>
+
+            <!-- Bouton d'envoi -->
+            <button type="submit">Envoyer le message</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
